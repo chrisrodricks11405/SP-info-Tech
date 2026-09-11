@@ -13,10 +13,12 @@ npm i
 npm run dev
 ```
 
-## Vercel environment variables
+The development server runs at `http://localhost:3000` by default. To use a
+different port, run `npm run dev -- --port 8080`.
 
-Add these variables in Vercel under **Settings > Environment Variables** for
-Production, Preview and Development, then redeploy:
+## Environment variables
+
+Create a local `.env` file with these Supabase variables:
 
 ```text
 SUPABASE_URL=https://your-project.supabase.co
@@ -27,9 +29,9 @@ VITE_SUPABASE_PUBLISHABLE_KEY=your-supabase-publishable-key
 
 The contact form works with the publishable key because the database migration
 allows anonymous inserts. If you have a Supabase service-role key, add it only
-as `SUPABASE_SERVICE_ROLE_KEY` in Vercel; never use it as a `VITE_` variable.
+as `SUPABASE_SERVICE_ROLE_KEY`; never expose it through a `VITE_` variable.
 
-After deployment, test the form on the live domain and confirm a row appears in
+After starting the app, test the form locally and confirm a row appears in
 Supabase under `Table Editor > contact_submissions`.
 
 ## Built with
