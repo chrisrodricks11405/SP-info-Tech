@@ -150,7 +150,7 @@ function Index() {
               {[
                 ["2019", "Established"],
                 ["3", "Cities served"],
-                ["15+", "Active clients"],
+                ["4", "Core services"],
                 ["AMC", "Support contracts"],
               ].map(([value, label]) => (
                 <div key={label}>
@@ -266,7 +266,6 @@ function Index() {
               </article>
             ))}
           </div>
-          <p className="mt-8 text-sm italic text-muted-foreground">And many more valued clients…</p>
         </section>
 
         {/* Why trust us */}
