@@ -61,8 +61,8 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
-  --font-display: "Barlow Condensed", ui-sans-serif, sans-serif;
-  --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
@@ -158,11 +158,15 @@
 @layer base {
   body {
     font-family: var(--font-sans);
-    line-height: 1.6;
+    line-height: 1.65;
   }
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     letter-spacing: 0;
+    line-height: 1.1;
   }
 }
 

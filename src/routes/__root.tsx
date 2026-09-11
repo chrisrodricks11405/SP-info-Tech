@@ -11,7 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { Toaster } from "@/components/ui/sonner";
-
+import { ContactAssistant } from "@/components/ContactAssistant";
 
 function NotFoundComponent() {
   return (
@@ -85,6 +85,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "IT infrastructure, networking and enterprise technical support across Navi Mumbai, Mumbai and Panvel.",
       },
       { name: "author", content: "SP Infotech Sales & Services" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { name: "theme-color", content: "#14294d" },
       { property: "og:title", content: "SP Infotech Sales & Services" },
       {
         property: "og:description",
@@ -93,8 +95,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "SP Infotech Sales & Services" },
+      {
+        name: "twitter:description",
+        content:
+          "IT infrastructure, networking and enterprise technical support across Navi Mumbai, Mumbai and Panvel.",
+      },
     ],
     links: [
+      { rel: "canonical", href: "https://spinfotechindia.com/" },
       {
         rel: "stylesheet",
         href: appCss,
@@ -103,9 +112,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap",
       },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "@id": "https://spinfotechindia.com/#business",
+          name: "SP Infotech Sales & Services",
+          url: "https://spinfotechindia.com/",
+          email: "info@spinfotechindia.com",
+          telephone: "+91 62661 96880",
+          foundingDate: "2019",
+          description:
+            "IT infrastructure, networking and enterprise technical support across Navi Mumbai, Mumbai and Panvel.",
+          areaServed: ["Navi Mumbai", "Mumbai", "Panvel"],
+          priceRange: "$$",
+          image: "https://spinfotechindia.com/favicon.png",
+          sameAs: ["https://wa.me/6266196880"],
+        }),
+      },
     ],
   }),
 
@@ -137,7 +167,7 @@ function RootComponent() {
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
       <Toaster richColors position="top-center" />
+      <ContactAssistant />
     </QueryClientProvider>
   );
 }
-

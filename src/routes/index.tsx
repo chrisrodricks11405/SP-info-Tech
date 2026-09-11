@@ -12,9 +12,12 @@ import {
   Eye,
   Quote,
   ArrowRight,
+  Mail,
+  MessageCircle,
 } from "lucide-react";
 
 import { ContactForm } from "@/components/ContactForm";
+import { SiteHeader } from "@/components/SiteHeader";
 import { services } from "@/data/services";
 import heroImage from "@/assets/hero-network.jpg";
 
@@ -49,7 +52,7 @@ const clientGroups = [
     entries: [
       {
         name: "Central Warehousing Corporation – Navi Mumbai",
-        details: ["Regional Office, Navi Mumbai", "CW Vashi Office, Navi Mumbai", "IRT Kalamboli, Navi Mumbai"],
+        details: ["Regional Office, Navi Mumbai", "CWC Vashi office navi mumbai", "IRT Kalamboli, Navi Mumbai"],
       },
       {
         name: "Navi Mumbai Municipal Corporation (NMMC)",
@@ -96,43 +99,10 @@ const promises = [
   { title: "Customer Success", body: "Your business continuity is our priority." },
 ];
 
-const nav = [
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#clients", label: "Clients" },
-  { href: "#vision", label: "Vision" },
-  { href: "#contact", label: "Contact" },
-];
-
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-50 border-b border-border/80 bg-background/95 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-3.5 lg:px-8">
-          <a href="#top" className="flex items-center gap-3">
-            <img src="/favicon.png" alt="SP Infotech Sales & Services logo" className="h-12 w-12 object-contain" />
-            <span className="leading-tight">
-              <span className="block font-display text-lg font-bold uppercase tracking-wide text-primary">
-                SP Infotech
-              </span>
-              <span className="block text-[0.65rem] font-semibold uppercase tracking-[0.24em] text-muted-foreground">
-                Sales &amp; Services
-              </span>
-            </span>
-          </a>
-          <nav className="hidden items-center gap-7 lg:flex">
-            {nav.map((n) => (
-              <a
-                key={n.href}
-                href={n.href}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-accent"
-              >
-                {n.label}
-              </a>
-            ))}
-          </nav>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main id="top">
         {/* Hero */}
@@ -166,6 +136,14 @@ function Index() {
                 className="rounded-md border border-primary-foreground/40 px-6 py-3 font-display text-sm font-semibold uppercase tracking-wider text-primary-foreground transition-colors hover:bg-primary-foreground/10"
               >
                 Talk To Us
+              </a>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm text-primary-foreground/80">
+              <a href="mailto:info@spinfotechindia.com" className="inline-flex items-center gap-2 transition-colors hover:text-accent">
+                <Mail className="h-4 w-4" aria-hidden="true" /> info@spinfotechindia.com
+              </a>
+              <a href="https://wa.me/6266196880" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition-colors hover:text-accent">
+                <MessageCircle className="h-4 w-4" aria-hidden="true" /> WhatsApp us
               </a>
             </div>
             <dl className="mt-14 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-4">
